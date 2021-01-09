@@ -1,0 +1,42 @@
+﻿@model AssessmentTask.Models.Degree
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Degree</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DegreeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DegreeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DegreeDuration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DegreeDuration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lecturer.Forenames)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lecturer.Forenames)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DegreeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

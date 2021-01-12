@@ -18,28 +18,32 @@
             @Html.DisplayNameFor(model => model.DegreeDuration)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Lecturer.Forenames)
+            Lecturer name
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DegreeName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DegreeDuration)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lecturer.Forenames)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DegreeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DegreeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DegreeID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DegreeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DegreeDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lecturer.Forenames)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.DegreeID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.DegreeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.DegreeID })
+                |
+                @Html.ActionLink("Students", "GetStudentsByDegree", "Students", new { degreeID = item.DegreeID }, null) |
+                @Html.ActionLink("Courses", "GetCoursesByDegree", "Courses", new { degreeID = item.DegreeID }, null)
+            </td>
+        </tr>
+    }
 
 </table>

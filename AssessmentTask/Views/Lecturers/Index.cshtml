@@ -53,9 +53,11 @@
             @Html.DisplayFor(modelItem => item.FullName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LecturerID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LecturerID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LecturerID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.LecturerID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.LecturerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.LecturerID }) |
+            @Html.ActionLink("Degrees", "GetByLecturer", "Degrees", new { lecturerID = item.LecturerID }, null)
+
         </td>
     </tr>
 }

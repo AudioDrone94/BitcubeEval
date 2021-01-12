@@ -21,6 +21,13 @@ namespace AssessmentTask.Controllers
             return View(courses.ToList());
         }
 
+        // GET: Courses by degree
+        public ActionResult GetCoursesByDegree(int degreeID)
+        {
+            var courses = db.Courses.Include(c => c.Degree).Where(c => c.DegreeID == degreeID);
+            return View("Index",courses.ToList());
+        }
+
         // GET: Courses/Details/5
         public ActionResult Details(int? id)
         {
